@@ -1,10 +1,11 @@
 import './App.css';
-import { NavbarScreen } from './components';
+import { NavbarScreen, CategoriesScreen } from './components';
 
 function App() {
   return (
     <div className='container'>
       <NavbarScreen />
+      <CategoriesScreen />
     </div>
   );
 }
