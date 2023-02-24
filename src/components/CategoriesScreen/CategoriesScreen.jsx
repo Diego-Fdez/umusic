@@ -2,7 +2,7 @@ import './styles/categoriesStyles.css';
 
 const CategoriesScreen = () => {
   return (
-    <div className='categories-container'>
+    <aside className='categories-container'>
       <button className='category-button'>All</button>
       <button className='category-button'>Electronics</button>
       <button className='category-button'>Fashion</button>
@@ -10,7 +10,7 @@ const CategoriesScreen = () => {
       <button className='category-button'>Reggae</button>
       <button className='category-button'>Sports</button>
       <button className='category-button'>Travel</button>
-    </div>
+    </aside>
   );
 };
 
