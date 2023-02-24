@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+}
+
+/*Webkit(Chrome, Android browser, Safari, Edge...)*/
+section::-webkit-scrollbar {
+  display: none;
+}
+section:hover::-webkit-scrollbar {
+  display: initial;
+}
+section::-webkit-scrollbar-thumb {
+  background-color: #09c;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
