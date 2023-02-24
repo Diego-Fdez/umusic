@@ -1,0 +1,30 @@
+.categories-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 2rem;
+  width: 100%;
+  gap: 1rem;
+}
+
+.category-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 1rem;
+  padding: 0.9rem 3rem;
+  border-radius: 0.9rem;
+  color: #ccc;
+  background-color: #222;
+  font-weight: 700;
+  border: 0;
+  transition: all 0.3ms ease;
+}
+
+.category-button:hover {
+  cursor: pointer;
+  background-color: #3f3f3f;
+}
