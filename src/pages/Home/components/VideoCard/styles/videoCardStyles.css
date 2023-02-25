@@ -23,6 +23,8 @@
 .video-card-title {
   position: absolute;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   left: 0;
   bottom: 0;
@@ -31,6 +33,12 @@
   background-color: #1e1e1e95;
   border-radius: 0 0 0.7rem 0.7rem;
   font-weight: 700;
+  visibility: hidden;
+  transition: all 0.8ms ease-in-out;
+}
+
+.video-card-container:hover .video-card-title {
+  visibility: visible;
 }
 
 .title {
@@ -41,6 +49,7 @@
 .subtitle {
   color: #ccc;
   font-size: 0.6rem;
+  align-self: flex-start;
 }
 
 /* tablet */
