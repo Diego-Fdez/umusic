@@ -10,18 +10,11 @@ body {
 }
 
 /*Webkit(Chrome, Android browser, Safari, Edge...)*/
-section::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
-}
-section:hover::-webkit-scrollbar {
-  display: initial;
-}
-section::-webkit-scrollbar-thumb {
-  background-color: #09c;
 }
 
 .container {
   min-height: 100vh;
-  min-width: 100vw;
   overflow-x: hidden;
 }
