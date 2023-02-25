@@ -1,14 +1,18 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { NavbarScreen, CategoriesScreen } from './components';
+import { NavbarScreen } from './components';
 import { Home } from './pages';
 
 function App() {
   return (
-    <div className='container'>
-      <NavbarScreen />
-      <CategoriesScreen />
-      <Home />
-    </div>
+    <BrowserRouter>
+      <div className='container'>
+        <NavbarScreen />
+        <Routes>
+          <Route path='/' index element={<Home />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
