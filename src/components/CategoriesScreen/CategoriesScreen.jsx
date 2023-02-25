@@ -7,10 +7,19 @@ const CategoriesScreen = () => {
   const [selectedCategory, setSelectedCategory] = useState('New');
   const addVideos = useVideoStore((state) => state.addVideos);
 
+  async function fetchData() {
+    try {
+      const data = await fetchFromAPI(
+        `search?part=snippet&q=${selectedCategory}`
+      );
+      addVideos(data?.items);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-      addVideos(data?.items)
-    );
+    fetchData();
   }, []);
 
   return (
