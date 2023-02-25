@@ -1,5 +1,5 @@
 import './styles/homeStyles.css';
-import { CategoriesScreen } from '../../components';
+import { CategoriesScreen, NavbarScreen } from '../../components';
 import { VideoCard } from './components';
 import useVideoStore from '../../store/videoStore';
 
@@ -8,6 +8,7 @@ const Home = () => {
   console.log(videos);
   return (
     <>
+      <NavbarScreen />
       <CategoriesScreen />
       <main className='home-container'>
         {videos.map((video) => (
