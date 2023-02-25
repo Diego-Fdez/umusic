@@ -1,15 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { NavbarScreen } from './components';
-import { Home } from './pages';
+import { Home, Login } from './pages';
 
 function App() {
   return (
     <BrowserRouter>
       <div className='container'>
-        <NavbarScreen />
         <Routes>
           <Route path='/' index element={<Home />} />
+          <Route path='/login' element={<Login />} />
         </Routes>
       </div>
     </BrowserRouter>
