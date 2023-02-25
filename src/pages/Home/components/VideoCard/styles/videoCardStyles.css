@@ -1,0 +1,7 @@
+.video-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 17rem;
+  height: 180px;
+  background-color: aliceblue;
+}
