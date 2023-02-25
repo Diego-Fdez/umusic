@@ -1,6 +1,18 @@
+import { useState, useEffect } from 'react';
 import './styles/categoriesStyles.css';
+import { fetchFromAPI } from '../../utils/fetchFromApi';
+import useVideoStore from '../../store/videoStore';
 
 const CategoriesScreen = () => {
+  const [selectedCategory, setSelectedCategory] = useState('New');
+  const addVideos = useVideoStore((state) => state.addVideos);
+
+  useEffect(() => {
+    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`).then((data) =>
+      addVideos(data?.items)
+    );
+  }, []);
+
   return (
     <aside className='categories-container'>
       <button className='category-button'>All</button>
