@@ -1,0 +1,119 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-logo {
+  font-weight: 800;
+  font-size: 1rem;
+  color: #ff0000;
+  font-family: 'Fredoka One', cursive;
+  margin-top: 3rem;
+}
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 0.6rem;
+  width: 95%;
+}
+
+.login-title {
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.login-title-span {
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: #ff0000;
+}
+
+.login-subtitle {
+  width: 100%;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.login-buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-top: 3rem;
+  gap: 1.3rem;
+}
+
+.login-buttons-container > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  border: 0.3px solid #ccc;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #ccc;
+  transition: all 0.3ms ease-in-out;
+}
+
+.login-buttons-container > button:hover {
+  cursor: pointer;
+  background-color: #3f3f3f;
+  border: 0.3px solid transparent;
+}
+
+.logo-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 0.3rem;
+}
+
+.logo-img-facebook {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #fff;
+  border-radius: 0.3rem;
+}
+
+/* tablet */
+@media screen and (min-width: 541px) and (max-width: 768px) {
+  .login-buttons-container {
+    width: 50%;
+    margin-top: 5rem;
+    gap: 1.8rem;
+  }
+
+  .login-buttons-container > button {
+    height: 3rem;
+  }
+}
+
+/* laptop */
+@media screen and (min-width: 769px) {
+  .login-buttons-container {
+    width: 30%;
+    margin-top: 5rem;
+    gap: 1.8rem;
+  }
+
+  .login-buttons-container > button {
+    height: 3rem;
+  }
+}
