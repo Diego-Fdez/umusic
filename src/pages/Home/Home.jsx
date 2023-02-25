@@ -8,9 +8,7 @@ const Home = () => {
   return (
     <main className='home-container'>
       {videos.map((video) => (
-        <div key={video.id.videoId}>
-          <VideoCard video={video} />
-        </div>
+        <VideoCard key={video.id.videoId} video={video} />
       ))}
     </main>
   );
