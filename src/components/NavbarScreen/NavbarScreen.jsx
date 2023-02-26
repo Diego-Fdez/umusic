@@ -1,10 +1,13 @@
+import { Link } from 'react-router-dom';
 import './styles/navbarStyles.css';
 
 const NavbarScreen = () => {
   return (
     <header className='navbar-container'>
       <div className='logo-container'>
-        <h1 className='logo'>UMUSIC</h1>
+        <Link to={'/'}>
+          <h1 className='logo'>UMUSIC</h1>
+        </Link>
       </div>
       <div className='search-container'>
         <input
