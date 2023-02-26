@@ -11,7 +11,6 @@ const CategoriesScreen = () => {
   async function fetchData() {
     try {
       const data = await fetchVideosByCategory(category);
-      console.log(data.items);
       addVideos(data?.items);
     } catch (error) {
       console.log(error);
