@@ -1,0 +1,25 @@
+.player-container {
+  display: flex;
+  margin: 1rem auto;
+  width: 95%;
+  height: 17rem;
+}
+
+/* tablet */
+@media screen and (min-width: 541px) and (max-width: 768px) {
+  .player-container {
+    margin: 2rem auto;
+    width: 80%;
+    height: 21rem;
+  }
+}
+
+/* laptop */
+@media screen and (min-width: 769px) {
+  .player-container {
+    margin-top: 2rem;
+    margin-left: 4rem;
+    width: 62%;
+    height: 32rem;
+  }
+}
