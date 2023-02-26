@@ -1,12 +1,16 @@
 .categories-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-auto-flow: column;
   align-items: center;
   justify-content: center;
-  position: relative;
   min-height: 2rem;
-  width: 100%;
-  gap: 1.3rem;
+  max-width: 12500px;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.categories-container::-webkit-scrollbar {
+  background-color: transparent;
 }
 
 .category-button {
