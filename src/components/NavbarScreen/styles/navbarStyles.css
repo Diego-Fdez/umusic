@@ -65,6 +65,11 @@
   color: #ccc;
 }
 
+.search-icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
 .search-button:hover {
   cursor: pointer;
 }
