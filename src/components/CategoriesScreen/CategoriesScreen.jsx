@@ -1,17 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import './styles/categoriesStyles.css';
-import { fetchFromAPI } from '../../utils/fetchFromApi';
 import useVideoStore from '../../store/videoStore';
+import { CategoriesList } from './components';
+import { fetchVideosByCategory } from '../../utils/fetchVideosByCategory';
 
 const CategoriesScreen = () => {
-  const [selectedCategory, setSelectedCategory] = useState('New');
   const addVideos = useVideoStore((state) => state.addVideos);
+  const category = useVideoStore((state) => state.selectedCategory);
 
   async function fetchData() {
     try {
-      const data = await fetchFromAPI(
-        `search?part=snippet&q=${selectedCategory}`
-      );
+      const data = await fetchVideosByCategory(category);
       addVideos(data?.items);
     } catch (error) {
       console.log(error);
@@ -20,19 +19,9 @@ const CategoriesScreen = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [category]);
 
-  return (
-    <aside className='categories-container'>
-      <button className='category-button'>All</button>
-      <button className='category-button'>Electronics</button>
-      <button className='category-button'>Fashion</button>
-      <button className='category-button'>Music</button>
-      <button className='category-button'>Reggae</button>
-      <button className='category-button'>Sports</button>
-      <button className='category-button'>Travel</button>
-    </aside>
-  );
+  return <CategoriesList />;
 };
 
 export default CategoriesScreen;
