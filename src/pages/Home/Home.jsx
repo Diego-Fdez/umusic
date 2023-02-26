@@ -5,14 +5,14 @@ import useVideoStore from '../../store/videoStore';
 
 const Home = () => {
   const videos = useVideoStore((state) => state.videos);
-  console.log(videos);
+
   return (
     <>
       <NavbarScreen />
       <CategoriesScreen />
       <main className='home-container'>
         {videos.map((video) => (
-          <VideoCard key={video.id.videoId} video={video} />
+          <VideoCard key={video.id} video={video} />
         ))}
       </main>
     </>
