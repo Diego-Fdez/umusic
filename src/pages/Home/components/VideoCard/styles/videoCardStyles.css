@@ -4,16 +4,13 @@
   justify-content: center;
   position: relative;
   width: 95%;
-  height: 180px;
+  height: 240px;
   margin: 0.5rem;
   border-radius: 0.7rem;
   background-color: transparent;
 }
 
 .video-card-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 180px;
   border-radius: 0.7rem;
@@ -21,24 +18,15 @@
 }
 
 .video-card-title {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  left: 0;
-  bottom: 0;
+  justify-content: center;
   height: 56px;
   width: 100%;
-  background-color: #1e1e1e95;
-  border-radius: 0 0 0.7rem 0.7rem;
+  background-color: transparent;
   font-weight: 700;
-  visibility: hidden;
-  transition: all 0.8ms ease-in-out;
-}
-
-.video-card-container:hover .video-card-title {
-  visibility: visible;
+  gap: 0.5rem;
 }
 
 .title {
