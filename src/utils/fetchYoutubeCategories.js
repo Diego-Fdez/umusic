@@ -11,7 +11,7 @@ export const fetchCategories = async () => {
     params: {
       part: 'snippet',
       regionCode: 'US',
-      key: 'AIzaSyA01Mxc1RdjzJZeUuUKplNzu7Ww1QEvXTI',
+      key: import.meta.env.VITE_YOUTUBE_API_KEY,
     },
   });
 

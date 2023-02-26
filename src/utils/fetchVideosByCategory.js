@@ -13,7 +13,7 @@ export const fetchVideosByCategory = async (id) => {
       chart: 'mostPopular',
       maxResults: 24,
       videoCategoryId: id,
-      key: 'AIzaSyA01Mxc1RdjzJZeUuUKplNzu7Ww1QEvXTI',
+      key: import.meta.env.VITE_YOUTUBE_API_KEY,
     },
   });
 
