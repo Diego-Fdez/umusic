@@ -45,7 +45,11 @@ const NavbarScreen = () => {
           onChange={(e) => setKeyword(e.target.value)}
         />
         <button type='submit' className='search-button'>
-          S
+          <img
+            src='/search-icon.svg'
+            alt='search-icon'
+            className='search-icon'
+          />
         </button>
       </form>
       <nav className='profile-container'>
