@@ -12,7 +12,10 @@ const Home = () => {
       <CategoriesScreen />
       <main className='home-container'>
         {videos.map((video) => (
-          <VideoCard key={video.id} video={video} />
+          <VideoCard
+            key={video.id.videoId ? video.id.videoId : video.id}
+            video={video}
+          />
         ))}
       </main>
     </>
