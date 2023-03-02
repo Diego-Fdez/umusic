@@ -1,5 +1,5 @@
 import './styles/homeStyles.css';
-import { CategoriesScreen, NavbarScreen } from '../../components';
+import { CategoriesScreen, NavbarScreen, HeadScreen } from '../../components';
 import { VideoCard } from './components';
 import useVideoStore from '../../store/videoStore';
 
@@ -8,6 +8,7 @@ const Home = () => {
 
   return (
     <>
+      <HeadScreen pageTitle={'Home'} />
       <NavbarScreen />
       <CategoriesScreen />
       <main className='home-container'>
