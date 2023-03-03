@@ -1,8 +1,10 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles/errorPageStyles.css';
 import { NavbarScreen, HeadScreen } from '../../components';
 
 const ErrorPage = () => {
+  const [gif, setGif] = useState('');
   const navigate = useNavigate();
 
   const gifsErrors = [
@@ -17,6 +19,10 @@ const ErrorPage = () => {
       gifsErrors[Math.floor(Math.random() * gifsErrors.length) + 1]
     }/giphy.gif`;
   };
+
+  useEffect(() => {
+    setGif(randomImage());
+  }, []);
 
   const handleClick = () => {
     navigate('/');
@@ -34,7 +40,7 @@ const ErrorPage = () => {
           </span>
           <img
             className='gifErrorStyles'
-            src={randomImage()}
+            src={gif}
             alt='alt-page-404'
             loading='lazy'
           />
