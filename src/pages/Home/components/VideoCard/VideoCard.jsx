@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import './styles/videoCardStyles.css';
 
 const VideoCard = ({ video: { id, snippet } }) => {
-  console.log(id);
   return (
     <>
       <div className='video-card-container'>
