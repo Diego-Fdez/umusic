@@ -8,7 +8,7 @@ const NavbarScreen = () => {
   const addVideos = useVideoStore((state) => state.addVideos);
   const [keyword, setKeyword] = useState('');
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -18,11 +18,7 @@ const NavbarScreen = () => {
     } catch (error) {
       console.log(error);
     }
-  }
-
-  useEffect(() => {
-    handleSubmit();
-  }, []);
+  };
 
   return (
     <header className='navbar-container'>
@@ -32,9 +28,9 @@ const NavbarScreen = () => {
         </Link>
       </div>
       <form
-        onSubmit={(e) => handleSubmit(e)}
-        onKeyUp={(e) => {
-          if (e.key === 'Enter') handleSubmit(e);
+        onSubmit={handleSubmit}
+        onKeyUp={() => {
+          if (e.key === 'Enter') handleSubmit;
         }}
         className='search-container'
       >
