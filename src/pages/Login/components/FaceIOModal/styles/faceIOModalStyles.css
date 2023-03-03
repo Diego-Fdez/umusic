@@ -1,0 +1,76 @@
+.faceio-modal-container {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 20;
+  background-color: #222222b3;
+  gap: 2rem;
+}
+
+.faceio-modal-title {
+  color: #ccc;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.button-close-modal {
+  background-color: transparent;
+  border: 0;
+  transition: all 0.3ms ease-in-out;
+}
+
+.button-close-modal:hover {
+  cursor: pointer;
+}
+
+.faceio-modal-close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  background-color: transparent;
+}
+
+.faceio-modal-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  border: 0.3px solid #ccc;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #ccc;
+  transition: all 0.3ms ease-in-out;
+}
+
+.faceio-modal-button:hover {
+  cursor: pointer;
+  background-color: #3f3f3f;
+  border: 0.3px solid transparent;
+}
+
+/* tablet */
+@media screen and (min-width: 541px) and (max-width: 768px) {
+  .faceio-modal-button {
+    width: 50%;
+    height: 3rem;
+  }
+}
+
+/* laptop */
+@media screen and (min-width: 769px) {
+  .faceio-modal-button {
+    width: 30%;
+    height: 3rem;
+  }
+}
