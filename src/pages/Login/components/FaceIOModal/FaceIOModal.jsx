@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './styles/faceIOModalStyles.css';
 
 const FaceIOModal = ({ hasOpen, setHasOpen }) => {
+  const navigate = useNavigate();
   const [faceIOKey, setFaceIOKey] = useState(null);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ const FaceIOModal = ({ hasOpen, setHasOpen }) => {
       const response = await faceIOKey.authenticate({
         locale: 'auto',
       });
-
+      navigate('/');
       console.log(` Unique Facial ID: ${response.facialId}
           PayLoad: ${response.payload}
           `);
