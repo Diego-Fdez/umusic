@@ -10,7 +10,7 @@ function App() {
           <Route path='/' index element={<Home />} />
           <Route path='/login' element={<Login />} />
           <Route path='/playlist/:id' element={<PlayList />} />
-          <Route path='/:rest*' element={<ErrorPage />} />
+          <Route path='/:rest/*' element={<ErrorPage />} />
         </Routes>
       </div>
     </BrowserRouter>
