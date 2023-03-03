@@ -1,10 +1,12 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const HeadScreen = ({ pageTitle }) => {
   return (
-    <Helmet>
-      <title>{pageTitle} - UMUSIC</title>
-    </Helmet>
+    <HelmetProvider>
+      <Helmet>
+        <title>{pageTitle ? `${pageTitle} - UMUSIC` : 'UMUSIC'}</title>
+      </Helmet>
+    </HelmetProvider>
   );
 };
 
