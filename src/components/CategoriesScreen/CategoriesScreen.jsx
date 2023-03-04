@@ -1,25 +1,13 @@
-import { useEffect } from 'react';
 import './styles/categoriesStyles.css';
 import useVideoStore from '../../store/videoStore';
 import { CategoriesList } from './components';
-import { fetchVideosByCategory } from '../../utils/fetchVideosByCategory';
+import { useFetch } from '../../hooks/useFetch';
 
 const CategoriesScreen = () => {
-  const addVideos = useVideoStore((state) => state.addVideos);
   const category = useVideoStore((state) => state.selectedCategory);
-
-  async function fetchData() {
-    try {
-      const data = await fetchVideosByCategory(category);
-      addVideos(data?.items);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, [category]);
+  useFetch(
+    `videos?part=snippet&chart=mostPopular&maxResults=24&videoCategoryId=${category}`
+  );
 
   return <CategoriesList />;
 };
