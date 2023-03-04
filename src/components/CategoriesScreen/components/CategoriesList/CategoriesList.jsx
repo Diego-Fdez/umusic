@@ -1,28 +1,16 @@
 import { useState, useEffect } from 'react';
 import './styles/categoriesListStyles.css';
-import { fetchCategories } from '../../../../utils/fetchYoutubeCategories';
 import useVideoStore from '../../../../store/videoStore';
+import { useFetch } from '../../../../hooks/useFetch';
 
 const CategoriesList = () => {
+  const { getData } = useFetch('videoCategories?part=snippet&regionCode=US');
   const addCategories = useVideoStore((state) => state.addSelectedCategory);
   const [categories, setCategories] = useState([]);
 
-  /**
-   * When the component mounts, fetch the categories from the YouTube API and set the categories state
-   * to the response.
-   */
-  async function fetchYoutubeCategories() {
-    try {
-      const categories = await fetchCategories();
-      setCategories(categories?.items);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   useEffect(() => {
-    fetchYoutubeCategories();
-  }, []);
+    setCategories(getData);
+  }, [getData]);
 
   /**
    * When the user clicks on a category, the category is added to the list of categories
