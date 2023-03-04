@@ -1,20 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styles/navbarStyles.css';
-import { fetchFromYoutube } from '../../utils/fetchFromYoutube';
 import useVideoStore from '../../store/videoStore';
+import { useFetch } from '../../hooks/useFetch';
 
 const NavbarScreen = () => {
   const addVideos = useVideoStore((state) => state.addVideos);
+  const [input, setInput] = useState('');
   const [keyword, setKeyword] = useState('');
+  const { getData } = useFetch(
+    `search?part=snippet&maxResults=24&q=${keyword}`
+  );
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const data = await fetchFromYoutube(keyword);
-      addVideos(data?.items);
-      setKeyword('');
+      setKeyword(input);
+      addVideos(getData);
     } catch (error) {
       console.log(error);
     }
@@ -29,7 +32,7 @@ const NavbarScreen = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        onKeyUp={() => {
+        onKeyUp={(e) => {
           if (e.key === 'Enter') handleSubmit;
         }}
         className='search-container'
@@ -38,7 +41,7 @@ const NavbarScreen = () => {
           type='search'
           placeholder='Search your music'
           className='search-input'
-          onChange={(e) => setKeyword(e.target.value)}
+          onChange={(e) => setInput(e.target.value)}
         />
         <button type='submit' className='search-button'>
           <img
