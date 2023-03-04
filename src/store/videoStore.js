@@ -3,6 +3,7 @@ import { create } from 'zustand';
 const useVideoStore = create((set) => ({
   videos: [],
   selectedCategory: 1,
+  loading: false,
   addVideos: (data) => {
     set((state) => ({
       videos: data,
@@ -11,6 +12,11 @@ const useVideoStore = create((set) => ({
   addSelectedCategory: (data) => {
     set((state) => ({
       selectedCategory: data,
+    }));
+  },
+  setLoading: (data) => {
+    set((state) => ({
+      loading: data,
     }));
   },
 }));
