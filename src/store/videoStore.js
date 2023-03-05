@@ -4,6 +4,7 @@ const useVideoStore = create((set) => ({
   videos: [],
   selectedCategory: 1,
   loading: false,
+  error: null,
   addVideos: (data) => {
     set((state) => ({
       videos: data,
@@ -17,6 +18,11 @@ const useVideoStore = create((set) => ({
   setLoading: (data) => {
     set((state) => ({
       loading: data,
+    }));
+  },
+  setError: (data) => {
+    set((state) => ({
+      error: data,
     }));
   },
 }));
