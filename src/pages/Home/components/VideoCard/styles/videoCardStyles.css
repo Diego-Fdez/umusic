@@ -4,7 +4,7 @@
   justify-content: center;
   position: relative;
   width: 95%;
-  height: 240px;
+  height: 260px;
   margin: 0.5rem;
   border-radius: 0.7rem;
   background-color: transparent;
@@ -17,12 +17,25 @@
   object-fit: cover;
 }
 
+.duration-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 5.5rem;
+  right: 0.7rem;
+  color: #fff;
+  background-color: rgba(34, 34, 34, 0.298);
+  width: 6rem;
+  padding: 0.3rem;
+}
+
 .video-card-title {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 56px;
+  height: 76px;
   width: 100%;
   background-color: transparent;
   font-weight: 700;
@@ -34,10 +47,32 @@
   font-size: 0.9rem;
 }
 
+.author-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.author-image {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
 .subtitle {
   color: #ccc;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   align-self: flex-start;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.6rem;
+  color: #ccc;
 }
 
 /* tablet */
