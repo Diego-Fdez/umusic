@@ -10,6 +10,7 @@ export function useFetch(url) {
   const [controller, setController] = useState(null);
 
   useEffect(() => {
+    /* This is the options object that is passed to the fetch method. */
     const options = {
       method: 'GET',
       headers: {
@@ -18,9 +19,11 @@ export function useFetch(url) {
       },
     };
 
+    /* Creating a new instance of the AbortController class. */
     const abortController = new AbortController();
     setController(abortController);
     loading(true);
+    /* Fetching the data from the API and setting the data to the state. */
     fetch(`${baseURL}/${url}`, options, {
       signal: abortController.signal,
     })
@@ -36,9 +39,13 @@ export function useFetch(url) {
       })
       .finally(() => loading(false));
 
+    /* Returning a function that is called when the component is unmounted. */
     return () => abortController.abort();
   }, [url]);
 
+  /**
+   * If the controller is defined, abort the request and set the error to 'Request was cancelled'.
+   */
   const handleCancelRequest = () => {
     if (controller) {
       controller.abort();
