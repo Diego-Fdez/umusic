@@ -1,23 +1,21 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './styles/navbarStyles.css';
-import useVideoStore from '../../store/videoStore';
 import { useFetch } from '../../hooks/useFetch';
 
 const NavbarScreen = () => {
-  const addVideos = useVideoStore((state) => state.addVideos);
+  const navigate = useNavigate();
   const [input, setInput] = useState('');
   const [keyword, setKeyword] = useState('');
-  const { getData } = useFetch(
-    `search?part=snippet&maxResults=24&q=${keyword}`
-  );
+  useFetch(`v1/search/?q=${keyword}&hl=en&gl=US`);
+  const nameUrl = window.location.href;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       setKeyword(input);
-      addVideos(getData);
+      if (nameUrl !== '/') navigate('/');
     } catch (error) {
       console.log(error);
     }
