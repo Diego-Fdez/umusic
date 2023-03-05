@@ -5,6 +5,7 @@ const useVideoStore = create((set) => ({
   selectedCategory: 1,
   loading: false,
   error: null,
+  keyword: 'videos nuevos',
   addVideos: (data) => {
     set((state) => ({
       videos: data,
@@ -23,6 +24,11 @@ const useVideoStore = create((set) => ({
   setError: (data) => {
     set((state) => ({
       error: data,
+    }));
+  },
+  addKeyword: (data) => {
+    set((state) => ({
+      keyword: data,
     }));
   },
 }));
