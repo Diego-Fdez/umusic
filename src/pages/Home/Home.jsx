@@ -19,11 +19,8 @@ const Home = () => {
       <CategoriesScreen />
       {loading && <Loader />}
       <main className='home-container'>
-        {videos.map((video) => (
-          <VideoCard
-            key={video.id.videoId ? video.id.videoId : video.id}
-            video={video}
-          />
+        {videos?.map((video) => (
+          <VideoCard key={video?.video?.videoId} video={video.video} />
         ))}
       </main>
     </>
