@@ -4,13 +4,13 @@ import useVideoStore from '../../../../store/videoStore';
 import { useFetch } from '../../../../hooks/useFetch';
 
 const CategoriesList = () => {
-  const { getData } = useFetch('videoCategories?part=snippet&regionCode=US');
+  //const { getData } = useFetch('videoCategories?part=snippet&regionCode=US');
   const addCategories = useVideoStore((state) => state.addSelectedCategory);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    setCategories(getData);
-  }, [getData]);
+    setCategories(['wisin', 'yandel', 'new']);
+  }, []);
 
   /**
    * When the user clicks on a category, the category is added to the list of categories
