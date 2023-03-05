@@ -6,7 +6,7 @@ import { Loader } from './components';
 
 const Home = lazy(() => import('./pages/Home/Home'));
 const Login = lazy(() => import('./pages/Login/Login'));
-const PlayList = lazy(() => import('./pages/PlayList/PlayList'));
+const PlayerScreen = lazy(() => import('./pages/PlayerScreen/PlayerScreen'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
 const Room = lazy(() => import('./pages/Room/Room'));
 
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path='/' index element={<Home />} />
             <Route path='login' element={<Login />} />
-            <Route path='playlist/:id' element={<PlayList />} />
+            <Route path='watch/:id' element={<PlayerScreen />} />
             <Route path='/:rest/*' element={<ErrorPage />} />
             <Route path='room' element={<Room />} />
           </Routes>
