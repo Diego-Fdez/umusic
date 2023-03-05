@@ -4,8 +4,8 @@ import { CategoriesList } from './components';
 import { useFetch } from '../../hooks/useFetch';
 
 const CategoriesScreen = () => {
-  const category = useVideoStore((state) => state.selectedCategory);
-  useFetch(`v1/search/?q=wisin&hl=en&gl=US`);
+  const keyword = useVideoStore((state) => state.keyword);
+  useFetch(`v1/search/?q=${keyword}&hl=en&gl=US`);
 
   return <CategoriesList />;
 };
