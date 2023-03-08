@@ -9,7 +9,11 @@ const CategoriesList = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    setCategories(['wisin', 'yandel', 'new']);
+    setCategories([
+      { id: 1, title: 'wisin' },
+      { id: 2, title: 'yandel' },
+      { id: 3, title: 'new' },
+    ]);
   }, []);
 
   /**
@@ -27,7 +31,7 @@ const CategoriesList = () => {
           className='category-button'
           onClick={() => handleClick(category?.id)}
         >
-          {category?.snippet?.title}
+          {category?.title}
         </button>
       ))}
     </aside>
