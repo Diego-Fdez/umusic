@@ -5,7 +5,7 @@ const useVideoStore = create((set) => ({
   selectedCategory: 1,
   loading: false,
   error: null,
-  keyword: 'videos nuevos',
+  keyword: 'todos',
   addVideos: (data) => {
     set((state) => ({
       videos: data,
