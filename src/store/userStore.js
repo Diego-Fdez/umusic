@@ -1,17 +1,16 @@
 import { create } from 'zustand';
 
 const userStore = create((set) => ({
-  user: [
-    {
-      id: 'Diego',
-      name: '',
-      email: '',
-      userImage: '',
-    },
-  ],
+  user: {},
+  loadingUser: false,
   addUser: (data) => {
     set((state) => ({
-      user: [data],
+      user: data,
+    }));
+  },
+  setLoadingUser: (data) => {
+    set((state) => ({
+      loadingUser: data,
     }));
   },
 }));
