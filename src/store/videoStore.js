@@ -6,6 +6,7 @@ const useVideoStore = create((set) => ({
   loading: false,
   error: null,
   keyword: 'todos',
+  videoList: [],
   addVideos: (data) => {
     set((state) => ({
       videos: data,
@@ -29,6 +30,11 @@ const useVideoStore = create((set) => ({
   addKeyword: (data) => {
     set((state) => ({
       keyword: data,
+    }));
+  },
+  addVideoList: (data) => {
+    set((state) => ({
+      videoList: data,
     }));
   },
 }));
