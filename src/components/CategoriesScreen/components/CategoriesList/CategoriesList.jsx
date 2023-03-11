@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './styles/categoriesListStyles.css';
 import useVideoStore from '../../../../store/videoStore';
-import { useFetch } from '../../../../hooks/useFetch';
+import { useFetch } from '../../../../hooks/useFetchFromYoutube';
 
 const CategoriesList = () => {
   //const { getData } = useFetch('videoCategories?part=snippet&regionCode=US');
