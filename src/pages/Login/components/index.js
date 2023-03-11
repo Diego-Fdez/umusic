@@ -1,1 +1,1 @@
-export * from './FaceIOModal';
+export { default as FaceIOModal } from './FaceIOModal/FaceIOModal';
