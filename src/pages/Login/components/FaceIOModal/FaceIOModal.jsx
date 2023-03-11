@@ -57,7 +57,7 @@ const FaceIOModal = ({ hasOpen, setHasOpen }) => {
         onClick={() => setHasOpen(!hasOpen)}
       >
         <img
-          src='/src/assets/close-icon.svg'
+          src='/close-icon.svg'
           alt='close-icon'
           className='faceio-modal-close'
         />
