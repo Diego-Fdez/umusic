@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './styles/playlistStyles.css';
-import { useFetch } from '../../../../hooks/useFetch';
+import { useFetch } from '../../../../hooks/useFetchFromYoutube';
 import useVideoStore from '../../../../store/videoStore';
 import { formattedTime } from '../../../../utils/formattedTime';
 import { Loader } from '../../../../components';
