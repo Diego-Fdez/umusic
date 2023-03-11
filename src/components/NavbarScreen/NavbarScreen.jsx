@@ -8,7 +8,7 @@ const NavbarScreen = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState('');
   const addKeyword = useVideoStore((state) => state.addKeyword);
-  const user = userStore((state) => state.user);
+  const { userInfo } = userStore((state) => state.user);
   const nameUrl = window.location.href;
 
   const handleSubmit = async (e) => {
@@ -54,11 +54,9 @@ const NavbarScreen = () => {
       <nav className='profile-container'>
         <Link to={'/login'}>
           <img
-            src={
-              user?.picture ? user?.picture : '/src/assets/default-image.png'
-            }
-            alt={user?.userName ? user?.userName : 'user-image'}
-            title={user?.userName ? user?.userName : 'Profile'}
+            src={userInfo?.picture ? userInfo?.picture : '/default-image.png'}
+            alt={userInfo?.userName ? userInfo?.userName : 'user-image'}
+            title={userInfo?.userName ? userInfo?.userName : 'Profile'}
             className='profile-image'
           />
         </Link>
