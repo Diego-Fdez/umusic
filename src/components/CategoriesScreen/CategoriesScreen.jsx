@@ -1,7 +1,7 @@
 import './styles/categoriesStyles.css';
 import useVideoStore from '../../store/videoStore';
 import { CategoriesList } from './components';
-import { useFetch } from '../../hooks/useFetch';
+import { useFetch } from '../../hooks/useFetchFromYoutube';
 
 const CategoriesScreen = () => {
   const keyword = useVideoStore((state) => state.keyword);
