@@ -24,7 +24,7 @@ function App() {
               <Route path='login' element={<Login />} />
               <Route path='watch/:id' element={<PlayerScreen />} />
               <Route path='/:rest/*' element={<ErrorPage />} />
-              <Route path='room' element={<Room />} />
+              <Route path='room/:id' element={<Room />} />
             </Routes>
           </BrowserRouter>
         </Suspense>
