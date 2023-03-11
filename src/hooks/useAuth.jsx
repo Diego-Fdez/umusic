@@ -33,7 +33,7 @@ const UseAuth = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        addUser(data?.data?.userInfo), navigate('/');
+        addUser(data?.data), navigate('/');
       })
       .catch((error) => console.log(error))
       .finally(() => loadingUser(false));
