@@ -71,8 +71,33 @@
 .stats-container {
   display: flex;
   flex-direction: row;
+  position: relative;
   font-size: 0.6rem;
   color: #ccc;
+}
+
+.add-button {
+  position: absolute;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  color: #fff;
+  border: 0;
+  background-color: transparent;
+  bottom: 0.5rem;
+  right: 1rem;
+  transition: all 0.3ms ease-in-out;
+}
+
+.add-button:hover {
+  cursor: pointer;
+  filter: blur(0.5px);
+}
+
+.add-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* tablet */
