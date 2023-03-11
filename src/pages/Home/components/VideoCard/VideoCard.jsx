@@ -1,8 +1,33 @@
 import { Link } from 'react-router-dom';
 import './styles/videoCardStyles.css';
 import { formattedTime } from '../../../../utils/formattedTime';
+import UseFetchFromDB from '../../../../hooks/useFetchFromDB';
+import userStore from '../../../../store/userStore';
 
 const VideoCard = ({ video }) => {
+  const { fetchFromDB, baseURL } = UseFetchFromDB();
+  const user = userStore((state) => state.user);
+
+  /** It creates an object with the data that will be sent to the database, and then calls the
+   * `fetchFromDB` function from the `UseFetchFromDB` hook */
+  const handleClick = () => {
+    /* Creating an object with the data that will be sent to the database. */
+    const setData = {
+      roomId: user?.userInfo?.room_id,
+      userId: user?.userInfo?.id,
+      videoId: video?.videoId,
+      channelId: video?.author?.channelId,
+      videoTitle: video?.title,
+      channelTitle: video?.author?.title,
+      videoPictureURL: video?.thumbnails[0]?.url,
+      channelPictureURL: video?.author?.avatar[0]?.url,
+      videoLength: video?.lengthSeconds,
+    };
+
+    /* Calling the `fetchFromDB` function from the `UseFetchFromDB` hook. */
+    fetchFromDB(`${baseURL.addVideosToList}/room`, 'POST', setData);
+  };
+
   return (
     <>
       <div className='video-card-container'>
@@ -48,6 +73,9 @@ const VideoCard = ({ video }) => {
             <span>
               {video?.publishedTimeText ? ` - ${video?.publishedTimeText}` : ''}
             </span>
+            <button className='add-button' onClick={() => handleClick()}>
+              <img src='/add-icon.svg' alt='add-icon' className='add-icon' />
+            </button>
           </div>
         </div>
       </div>
