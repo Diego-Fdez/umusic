@@ -1,1 +1,1 @@
-export * from './CategoriesList';
+export { default as CategoriesList } from './CategoriesList/CategoriesList';
