@@ -9,6 +9,7 @@
   background-color: transparent;
   font-weight: 700;
   gap: 0.5rem;
+  margin-top: 3rem;
 }
 
 .video-room-info-title {
@@ -65,5 +66,6 @@
   .video-info-container {
     width: 62%;
     margin-left: 4rem;
+    margin-top: 2rem;
   }
 }
