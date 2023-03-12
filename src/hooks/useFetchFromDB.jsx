@@ -11,6 +11,10 @@ const UseFetchFromDB = () => {
     auth: `${import.meta.env.VITE_SERVER_URL}`,
   };
 
+  /**
+   * It fetches data from a database and returns the data.
+   * @returns The result of the fetch call.
+   */
   async function fetchFromDB(url, method, setData) {
     const options = {
       method: method,
