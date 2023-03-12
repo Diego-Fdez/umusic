@@ -25,7 +25,7 @@ const NavbarModal = ({ isOpen, setIsOpen }) => {
         </li>
         <li className='navbar-modal-list-item'>
           <Link
-            to={`/room/${userInfo.room_id}`}
+            to={`/room/${userInfo?.room_id}`}
             onClick={() => setIsOpen(!isOpen)}
           >
             My Room
