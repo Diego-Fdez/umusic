@@ -20,6 +20,7 @@ const UseFetchFromDB = () => {
       method: method,
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify(setData),
     };
