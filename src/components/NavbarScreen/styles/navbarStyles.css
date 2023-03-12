@@ -78,8 +78,14 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
   flex: 1;
   width: 50%;
+}
+
+.profile-button {
+  background-color: transparent;
+  border: 0;
 }
 
 .profile-image {
