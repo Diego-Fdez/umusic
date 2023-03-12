@@ -24,7 +24,10 @@ const UseAuth = () => {
       `${import.meta.env.VITE_SERVER_URL}/login`,
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
         body: JSON.stringify(setData),
       },
       {
