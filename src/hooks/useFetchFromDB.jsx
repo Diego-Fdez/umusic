@@ -5,9 +5,10 @@ const UseFetchFromDB = () => {
   const addVideoList = useVideoStore((state) => state.addVideoList);
 
   const baseURL = {
-    addVideosToList: import.meta.env.VITE_SERVER_URL,
+    addVideosToList: `${import.meta.env.VITE_SERVER_URL}/room`,
     getRoomList: `${import.meta.env.VITE_SERVER_URL}/room`,
-    roomInfo: 'http://localhost:3000/rooms/info',
+    getQR: `${import.meta.env.VITE_SERVER_URL}/qr`,
+    auth: `${import.meta.env.VITE_SERVER_URL}`,
   };
 
   async function fetchFromDB(url, method, setData) {
@@ -27,7 +28,7 @@ const UseFetchFromDB = () => {
     })
       .then((response) => response.json())
       .then((data) => data)
-      .catch((error) => console.log(error))
+      .catch((error) => error)
       .finally(() => loading(false));
 
     return result;
