@@ -26,8 +26,8 @@ const UseAuth = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          mode: 'no-cors',
+          // 'Access-Control-Allow-Origin': '*',
+          // mode: 'no-cors',
         },
         body: JSON.stringify(setData),
       },

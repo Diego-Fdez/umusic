@@ -14,7 +14,7 @@ const NavbarScreen = () => {
   const nameUrl = window.location.href;
 
   /**The addKeyword function adds the keyword to the
-   * keywords array in the KeywordsContext.js file. The function then navigates to the home page*/
+   * keywords array in the state. The function then navigates to the home page*/
   const handleSubmit = async (e) => {
     e.preventDefault();
 
