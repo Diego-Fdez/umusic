@@ -3,10 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import './styles/navbarStyles.css';
 import useVideoStore from '../../store/videoStore.js';
 import userStore from '../../store/userStore';
+import { NavbarModal } from './components';
 
 const NavbarScreen = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   const addKeyword = useVideoStore((state) => state.addKeyword);
   const { userInfo } = userStore((state) => state.user);
   const nameUrl = window.location.href;
@@ -52,14 +54,15 @@ const NavbarScreen = () => {
         </button>
       </form>
       <nav className='profile-container'>
-        <Link to={'/login'}>
+        <button className='profile-button' onClick={() => setIsOpen(!isOpen)}>
           <img
             src={userInfo?.picture ? userInfo?.picture : '/default-image.png'}
-            alt={userInfo?.userName ? userInfo?.userName : 'user-image'}
-            title={userInfo?.userName ? userInfo?.userName : 'Profile'}
+            alt={userInfo?.user_name ? userInfo?.user_name : 'user-image'}
+            title={userInfo?.user_name ? userInfo?.user_name : 'Profile'}
             className='profile-image'
           />
-        </Link>
+        </button>
+        <NavbarModal setIsOpen={setIsOpen} isOpen={isOpen} />
       </nav>
     </header>
   );
