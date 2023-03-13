@@ -15,12 +15,22 @@ const NavbarModal = ({ isOpen, setIsOpen }) => {
       <ul className='navbar-modal-list'>
         <li className='navbar-modal-list-item'>
           <Link to={'/login'} onClick={() => setIsOpen(!isOpen)}>
-            Login
+            <img
+              src='/login-icon.svg'
+              alt='login-icon'
+              className='navbar-modal-item-img'
+            />
+            <p>Login</p>
           </Link>
         </li>
         <li className='navbar-modal-list-item'>
           <Link to={'/qr'} onClick={() => setIsOpen(!isOpen)}>
-            Generate QR
+            <img
+              src='/qrcode-icon.svg'
+              alt='qrcode-icon'
+              className='navbar-modal-item-img'
+            />
+            <p>Generate QR</p>
           </Link>
         </li>
         <li className='navbar-modal-list-item'>
@@ -28,7 +38,12 @@ const NavbarModal = ({ isOpen, setIsOpen }) => {
             to={`/room/${userInfo?.room_id}`}
             onClick={() => setIsOpen(!isOpen)}
           >
-            My Room
+            <img
+              src='/music-list-icon.svg'
+              alt='music-list-icon'
+              className='navbar-modal-item-img'
+            />
+            <p>My Room</p>
           </Link>
         </li>
       </ul>
