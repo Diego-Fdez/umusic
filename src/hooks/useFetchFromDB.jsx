@@ -4,12 +4,7 @@ const UseFetchFromDB = () => {
   const loading = useVideoStore((state) => state.setLoading);
   const addVideoList = useVideoStore((state) => state.addVideoList);
 
-  const baseURL = {
-    addVideosToList: `${import.meta.env.VITE_SERVER_URL}/room`,
-    getRoomList: `${import.meta.env.VITE_SERVER_URL}/room`,
-    getQR: `${import.meta.env.VITE_SERVER_URL}/qr`,
-    auth: `${import.meta.env.VITE_SERVER_URL}`,
-  };
+  const baseURL = import.meta.env.VITE_SERVER_URL;
 
   /**
    * It fetches data from a database and returns the data.
@@ -20,6 +15,7 @@ const UseFetchFromDB = () => {
       method: method,
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify(setData),
     };
@@ -44,7 +40,7 @@ const UseFetchFromDB = () => {
    */
   async function getVideoList(id) {
     try {
-      const result = await fetchFromDB(`${baseURL.getRoomList}/${id}`, 'GET');
+      const result = await fetchFromDB(`${baseURL}/room/${id}`, 'GET');
       addVideoList(result?.data);
     } catch (error) {
       console.log(error);
