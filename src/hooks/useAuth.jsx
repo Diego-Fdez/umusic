@@ -23,11 +23,17 @@ const UseAuth = () => {
     fetch(
       `${import.meta.env.VITE_SERVER_URL}/login`,
       {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // 'Access-Control-Allow-Origin': '*',
-          // mode: 'no-cors',
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+          'Access-Control-Allow-Headers':
+            'X-Requested-With, content-type, Authorization',
+          'Access-Control-Allow-Credentials': true,
         },
         body: JSON.stringify(setData),
       },
