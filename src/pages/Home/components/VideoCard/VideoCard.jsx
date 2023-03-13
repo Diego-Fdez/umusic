@@ -25,7 +25,7 @@ const VideoCard = ({ video }) => {
     };
 
     /* Calling the `fetchFromDB` function from the `UseFetchFromDB` hook. */
-    fetchFromDB(`${baseURL.addVideosToList}`, 'POST', setData);
+    fetchFromDB(`${baseURL}/room`, 'POST', setData);
   };
 
   return (

@@ -16,7 +16,7 @@ const QRScreen = () => {
     };
 
     try {
-      const result = await fetchFromDB(baseURL.getQR, 'POST', setData);
+      const result = await fetchFromDB(`${baseURL}/qr`, 'POST', setData);
       setQR(result?.data);
     } catch (error) {
       console.log(error);
